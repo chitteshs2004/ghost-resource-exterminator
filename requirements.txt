@@ -1,0 +1,16 @@
+# Core AWS SDK
+boto3>=1.26.0
+botocore>=1.29.0
+
+# Dashboard
+streamlit>=1.28.0
+plotly>=5.10.0
+pandas>=2.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+schedule>=1.2.0
+
+# Streamlit Cloud extras (ensure proper resolution)
+numpy>=1.24.0
+pyarrow>=12.0.0

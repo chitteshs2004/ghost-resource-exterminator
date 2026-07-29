@@ -1,0 +1,8 @@
+{
+  "pythonVersion": "3.8",
+  "include": ["."],
+  "extraPaths": ["."],
+  "reportMissingModuleSource": "none",
+  "reportMissingImports": "none",
+  "typeCheckingMode": "basic"
+}

@@ -1,0 +1,15 @@
+.git
+.gitignore
+.env
+*.pyc
+__pycache__/
+.venv/
+venv/
+data/*.db
+*.log
+output*.txt
+scan_output*.txt
+Ghost_Resource_Exterminator_Diagrams.pdf
+Ghost_Resource_Exterminator_Diagrams.pptx
+README.md
+

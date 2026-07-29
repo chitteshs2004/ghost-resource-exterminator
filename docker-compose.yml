@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  dashboard:
+    build: .
+    image: ghost-resource-exterminator:latest
+    container_name: ghost-dashboard
+    ports:
+      - "8501:8501"
+    volumes:
+      - ghost-data:/app/data
+    env_file:
+      - .env
+    restart: unless-stopped
+
+  scheduler:
+    build: .
+    image: ghost-resource-exterminator:latest
+    container_name: ghost-scheduler
+    command: ["python", "scheduler.py", "--interval", "6"]
+    volumes:
+      - ghost-data:/app/data
+    env_file:
+      - .env
+    restart: unless-stopped
+    depends_on:
+      - dashboard
+
+volumes:
+  ghost-data:
+
