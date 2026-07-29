@@ -9,7 +9,7 @@ pipeline {
         DOCKERHUB_CREDS   = credentials('dockerhub-creds')
         IMAGE_NAME        = "chitteshs2004/ghost-resource-exterminator"
         IMAGE_TAG         = "${env.BUILD_NUMBER}"
-        EC2_HOST          = "ec2-user@18.207.138.181"
+        EC2_HOST          = "ubuntu@18.207.138.181"
     }
 
     stages {
