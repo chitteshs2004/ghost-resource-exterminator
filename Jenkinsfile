@@ -42,10 +42,10 @@ pipeline {
                 sshagent(credentials: ['ec2-ssh-key']) {
                     sh """
                         ssh -o StrictHostKeyChecking=no ${EC2_HOST} '
-                            docker pull ${IMAGE_NAME}:latest &&
-                            docker stop ghost-dashboard || true &&
-                            docker rm ghost-dashboard || true &&
-                            docker run -d --name ghost-dashboard \
+                            sudo docker pull ${IMAGE_NAME}:latest &&
+                            sudo docker stop ghost-dashboard || true &&
+                            sudo docker rm ghost-dashboard || true &&
+                            sudo docker run -d --name ghost-dashboard \
                                 -p 8501:8501 \
                                 --restart unless-stopped \
                                 -v ghost-data:/app/data \
