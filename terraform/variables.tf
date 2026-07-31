@@ -7,7 +7,12 @@ variable "aws_region" {
 variable "instance_type" {
   description = "EC2 instance size (t2.micro/t3.micro = AWS free-tier eligible)"
   type        = string
-  default     = "t2.micro"
+  default     = "t2.medium"
+}
+variable "instance_storage" {
+  description = "EC2 instance storage size in GB (default: 8GB)"
+  type        = number
+  default     = 30
 }
 
 variable "key_pair_name" {
@@ -41,3 +46,9 @@ variable "project_name" {
   type        = list(string)
   default     = ["sg-03b9b5a3dcb9c28cf"]
  }
+
+variable "iam role" {
+  description = "IAM role to associate with the EC2 instance (optional, overrides automatic IAM role creation)"
+  type        = string
+  default     = "terraform"
+}
