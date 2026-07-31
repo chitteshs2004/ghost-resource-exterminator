@@ -18,13 +18,11 @@ resource "aws_instance" "ghost_server" {
   key_name               = var.key_pair_name
   subnet_id              = var.subnet_id
   vpc_security_group_ids =var.security_group_id 
-
-
+  user_data = file("${path.module}/user_data.sh")
 root_block_device {
   volume_size = var.instance_storage
   volume_type = "gp3"
 }
-  user_data = file("${path.module}/user_data.sh")
 
   tags = {
     Name = var.project_name
