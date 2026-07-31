@@ -47,8 +47,3 @@ variable "project_name" {
   default     = ["sg-03b9b5a3dcb9c28cf"]
  }
 
-variable "iam role" {
-  description = "IAM role to associate with the EC2 instance (optional, overrides automatic IAM role creation)"
-  type        = string
-  default     = "terraform"
-}
