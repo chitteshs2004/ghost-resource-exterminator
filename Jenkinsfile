@@ -6,7 +6,7 @@ pipeline {
     //   ec2-ssh-key      : "SSH Username with private key" (username: ec2-user,
     //                       private key: paste contents of your .pem file)
     environment {
-        DOCKERHUB_CREDS   = credentials('docker-creds')
+        DOCKERHUB_CREDS   = credentials('docker_cred')
         IMAGE_NAME        = "chitteshs2004/ghost-resource-exterminator"
         IMAGE_TAG         = "${env.BUILD_NUMBER}"
         EC2_HOST          = "ubuntu@44.193.210.133"
