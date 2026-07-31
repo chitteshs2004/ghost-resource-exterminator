@@ -17,3 +17,24 @@ curl -SL https://github.com/docker/compose/releases/latest/download/docker-compo
   -o /usr/local/lib/docker/cli-plugins/docker-compose
 chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 
+
+
+#!/bin/bash
+set -e
+
+apt-get update -y
+apt-get install -y docker.io git curl
+
+systemctl enable docker
+systemctl start docker
+
+# Let the default Ubuntu user run Docker without sudo
+usermod -aG docker ubuntu
+
+# Install Docker Compose plugin
+mkdir -p /usr/local/lib/docker/cli-plugins
+
+curl -SL https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64 \
+  -o /usr/local/lib/docker/cli-plugins/docker-compose
+
+chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
