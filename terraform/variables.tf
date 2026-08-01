@@ -34,7 +34,7 @@ variable "project_name" {
  variable "ami_id" {
   description = "AMI ID to use for the EC2 instance (optional, overrides automatic Amazon Linux lookup)"
   type        = string
-  default     = "ami-004f790b835b26145"
+  default     = "ami-0b6d9d3d33ba97d99"
  }
  variable "subnet_id" {
   description = "Subnet ID to launch the EC2 instance in (optional, overrides automatic default subnet lookup)"
