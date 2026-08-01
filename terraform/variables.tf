@@ -29,7 +29,7 @@ variable "my_ip" {
 variable "project_name" {
   description = "Used to tag/name all resources"
   type        = string
-  default     = "ghost-resource-exterminator"
+  default     = "ghost-resource-exterminator-cicd-pipeline"
 }
  variable "ami_id" {
   description = "AMI ID to use for the EC2 instance (optional, overrides automatic Amazon Linux lookup)"
