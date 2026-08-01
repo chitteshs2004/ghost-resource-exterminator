@@ -6,10 +6,10 @@ pipeline {
     //   ec2-ssh-key      : "SSH Username with private key" (username: ec2-user,
     //                       private key: paste contents of your .pem file)
     environment {
-        DOCKERHUB_CREDS   = credentials('dockerhub-creds')
+        DOCKERHUB_CREDS   = credentials('docker_cred')
         IMAGE_NAME        = "chitteshs2004/ghost-resource-exterminator"
         IMAGE_TAG         = "${env.BUILD_NUMBER}"
-        EC2_HOST          = "ec2-user@18.207.138.181"
+        EC2_HOST          = "ubuntu@54.164.17.84"
     }
 
     stages {
@@ -39,7 +39,7 @@ pipeline {
 
 stage('Deploy to EC2') {
     steps {
-        sshagent(credentials: ['ec2-ssh-key']) {
+        sshagent(credentials: ['ssh_cred']) {
             sh """
                 ssh -o StrictHostKeyChecking=no ${EC2_HOST} '
                     docker pull ${IMAGE_NAME}:latest &&
