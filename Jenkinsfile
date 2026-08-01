@@ -4,7 +4,7 @@ pipeline {
     // Jenkins > Manage Jenkins > Credentials — create these two BEFORE running:
     //   dockerhub-creds : "Username with password" (your Docker Hub login)
     //   ec2-ssh-key      : "SSH Username with private key" (username: ec2-user,
-    //                       private key: paste contents of your .pem file)
+    //                       private key: paste contents of your .pem file).
     environment {
         DOCKERHUB_CREDS   = credentials('docker_cred')
         IMAGE_NAME        = "chitteshs2004/ghost-resource-exterminator"
